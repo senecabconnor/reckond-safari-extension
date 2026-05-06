@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reckond</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <div class="header">
+    <svg class="logo" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+      <rect width="36" height="36" rx="8" fill="#c96a3a" />
+      <path d="M11 9 L11 27" stroke="#0a0a0a" stroke-width="3.5" stroke-linecap="round" fill="none" />
+      <path d="M11 9 Q22 9 22 15 Q22 21 11 21" stroke="#0a0a0a" stroke-width="3.5" stroke-linecap="round" fill="none" />
+      <path d="M17 21 L25 27" stroke="#0a0a0a" stroke-width="3.5" stroke-linecap="round" fill="none" />
+    </svg>
+    <div>
+      <div class="brand-name">RECKOND</div>
+      <div class="brand-tagline">Scores brands on their commitment to the Black community</div>
+    </div>
+    <div class="domain-badge" id="current-domain">loading...</div>
+  </div>
+
+  <div id="content">
+    <div class="loading">
+      <span class="loading-dot"></span>
+      <span class="loading-dot"></span>
+      <span class="loading-dot"></span>
+      <div style="margin-top: 12px; font-size: 12px;">Checking brand...</div>
+    </div>
+  </div>
+
+  <div class="methodology-section" id="methodology-section" style="display:none">
+    <div class="methodology-toggle" id="methodology-toggle">
+      <span class="methodology-label">How We Score</span>
+      <span class="methodology-toggle-icon" id="methodology-icon">▾</span>
+    </div>
+    <div class="methodology-body" id="methodology-body">
+      <div style="margin-bottom:8px">
+        <div class="method-dim">
+          <div class="method-dot"></div>
+          <div class="method-text"><strong>Workforce Diversity</strong> <br /> (15 pts) — Black representation at exec,
+            board, and corporate levels</div>
+        </div>
+        <div class="method-dim">
+          <div class="method-dot"></div>
+          <div class="method-text"><strong>Black Spending</strong> <br /> (15 pts) — Ad spend with Black media,
+            investment in Black entrepreneurs</div>
+        </div>
+        <div class="method-dim">
+          <div class="method-dot"></div>
+          <div class="method-text"><strong>Political Alignment</strong> <br /> (15 pts) — PAC donations, voting rights
+            stance, DEI policy decisions</div>
+        </div>
+        <div class="method-dim">
+          <div class="method-dot"></div>
+          <div class="method-text"><strong>Crisis Response</strong> <br /> (15 pts) — Actions after racial justice
+            events; were pledges fulfilled?</div>
+        </div>
+        <div class="method-dim">
+          <div class="method-dot"></div>
+          <div class="method-text"><strong>Community Investment</strong> <br /> (15 pts) — HBCUs, Black neighborhood
+            presence, cultural support</div>
+        </div>
+        <div class="method-dim">
+          <div class="method-dot"></div>
+          <div class="method-text"><strong>Legal Record</strong> <br /> (15 pts) — EEOC complaints, racial
+            discrimination lawsuits, settlements</div>
+        </div>
+        <div class="method-dim">
+          <div class="method-dot"></div>
+          <div class="method-text"><strong>Supplier Diversity</strong> <br /> (10 pts) — % spend with Black-owned
+            vendors, diversity goals</div>
+        </div>
+      </div>
+      <div
+        style="margin-bottom:2px;font-size:9px;color:#FAF5EE;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;font-size:0.75rem">
+        Grade Scale (curved)</div>
+      <div class="method-scale">
+        <div class="scale-item"><span class="scale-grade" style="color:#22c55e">A</span><span
+            class="scale-range">65+</span></div>
+        <div class="scale-item"><span class="scale-grade" style="color:#84cc16">B</span><span
+            class="scale-range">52–64</span></div>
+        <div class="scale-item"><span class="scale-grade" style="color:#eab308">C</span><span
+            class="scale-range">44–51</span></div>
+        <div class="scale-item"><span class="scale-grade" style="color:#f97316">D</span><span
+            class="scale-range">35–43</span></div>
+        <div class="scale-item"><span class="scale-grade" style="color:#ef4444">F</span><span
+            class="scale-range">0–34</span></div>
+      </div>
+      <div style="font-size:0.75rem;color:#FAF5EE;margin-bottom:8px">Grades curved relative to 800+ tracked brands. Most
+        companies fall in D–F range.</div>
+      <div class="method-sources">
+        <div class="method-sources-title">Data Sources</div>
+        <div class="method-source-item">
+          <strong>Primary Research</strong>
+          <br />
+          SEC filings, EEO-1 reports, EEOC databases, lobbying disclosures</div>
+        <div class="method-source-item"><strong>NAACP Black Consumer Advisory</strong> <br /> DEI commitment tracking
+          (naacp.org)</div>
+        <div class="method-source-item"><strong>As You Sow Racial Justice Scorecard</strong> <br /> Large-Cap 3000
+          equity scores (asyousow.org)</div>
+        <div class="method-source-item"><strong>Estimated scores</strong> <br /> Industry benchmarks for brands not yet
+          fully researched (EST badge)</div>
+      </div>
+      <a class="method-full-link" id="methodology-full-link" href="#" target="_blank" rel="noopener noreferrer">Read full methodology →</a>
+    </div>
+  </div>
+
+  <div class="footer-link">
+    <a href="#" id="view-full">View full scorecard →</a>
+    <span class="footer-divider">|</span>
+    <a href="#" id="challenge-link">Challenge score</a>
+  </div>
+  <div class="footer-legal" id="footer-legal" style="display:none">
+    Based on public information available as of <span id="footer-date"></span>. Reckond’s assessment reflects its
+    methodology and is an expression of analytical opinion. Data may be incomplete or may have changed since the last
+    review.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

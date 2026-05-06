@@ -1,0 +1,14 @@
+{
+  "extension_name": {
+    "message": "Reckond",
+    "description": "The display name for the extension."
+  },
+  "extension_description": {
+    "message": "Scores 800+ brands on commitment to the Black community and surfaces Black-owned alternatives.",
+    "description": "Description of what the extension does."
+  },
+  "extension_action_title": {
+    "message": "Reckond score",
+    "description": "Tooltip for the toolbar button."
+  }
+}
