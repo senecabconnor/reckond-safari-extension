@@ -17,7 +17,8 @@ typealias PlatformViewController = NSViewController
 #endif
 
 #if os(macOS)
-let extensionBundleIdentifier = "com.reckond.app.extension"
+/// Must exactly match `PRODUCT_BUNDLE_IDENTIFIER` of the macOS Safari Web Extension target.
+private let extensionBundleIdentifier = "com.reckondllc.reckond.extension"
 #endif
 
 class ViewController: PlatformViewController, WKNavigationDelegate, WKScriptMessageHandler {
