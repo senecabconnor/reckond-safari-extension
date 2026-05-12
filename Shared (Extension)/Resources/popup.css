@@ -16,7 +16,7 @@ body {
 body {
   width: 100%;
   max-width: 480px;
-  min-height: 550px;
+  min-height: 200px;
   margin: 0 auto;
   background: #2D1C0E;
   color: #e8e5de;
@@ -31,6 +31,7 @@ body:not(.ios-popup) {
   width: 460px;
   min-width: 460px;
   max-width: 460px;
+  min-height: 550px;
   max-height: 85vh;
   overflow-y: auto;
 }
