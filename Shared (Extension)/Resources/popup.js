@@ -64,7 +64,7 @@ function safeHttpUrl(value, fallback = "#") {
 }
 
 async function fetchBrand(domain) {
-  const timeoutMs = 8000;
+  const timeoutMs = 20000;
   try {
     const response = await Promise.race([
       chrome.runtime.sendMessage({

@@ -101,19 +101,26 @@ async function writeCache(domain, data) {
 }
 
 async function fetchBrandFromApi(domain) {
-  try {
-    const res = await fetch(`${API_URL}/${encodeURIComponent(domain)}`, {
-      cache: "no-store",
-      headers: { Accept: "application/json" },
-    });
+  const url = `${API_URL}/${encodeURIComponent(domain)}`;
+  const maxAttempts = 3;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const res = await fetch(url, {
+        cache: "no-store",
+        headers: { Accept: "application/json" },
+      });
 
-    if (res.status === 404) return null;
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (res.status === 404) return null;
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-    return await res.json();
-  } catch (_) {
-    return undefined;
+      return await res.json();
+    } catch (_) {
+      if (attempt < maxAttempts) {
+        await new Promise((r) => setTimeout(r, 500 * attempt));
+      }
+    }
   }
+  return undefined;
 }
 
 async function fetchBrandScore(domain) {
